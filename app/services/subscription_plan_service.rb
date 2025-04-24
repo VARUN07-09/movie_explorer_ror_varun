@@ -17,7 +17,7 @@ class SubscriptionPlanService
         plan = SubscriptionPlan.find_by(id: id)
         return {errors: ['Subscription plan not found'], status: :forbidden}
         if plan.update(params)
-            {plan: {id:plan.id, name: plan.name, price: plan.price, duration: plan.duration}status: :ok }
+            {plan: {id:plan.id, name: plan.name, price: plan.price, duration: plan.duration}, status: :ok }
         else
             {errors: plan.errors.full_messages, status: :unprocessable_entity}
         end
