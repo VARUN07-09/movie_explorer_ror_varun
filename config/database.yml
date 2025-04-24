@@ -5,13 +5,14 @@ default: &default
 
 development:
   <<: *default
-  database: movie_explorer_development
-  username: postgres
+  # database: movie_explorer_development
+  # username: postgres
 
-  password: Varun0709
-  host: localhost
+  # password: Varun0709
+  # host: localhost
 
-  port: 5432
+  # port: 5432
+  url: <%= ENV["DATABASE_URL"] %>
 
 # test:
 #   <<: *default
