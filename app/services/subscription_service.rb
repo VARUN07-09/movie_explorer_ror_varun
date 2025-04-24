@@ -6,7 +6,7 @@ class SubscriptionService
         if current_user.active_subscription
             return {errors: ['User already has an active subscription'], status: :unprocessable_entity}
         end
-        subscription = current_user.subscriptions.build(subscription_plan: plan,  expires_at: Time.current +plan.duration.days)
+        subscription = current_user.subscriptions.build(subscription_plan: plan,  expires_at: Time.current + plan.duration.days)
         if subscription.save 
             {subscription: {id: subscription.id, plan: plan.name, expires_at: subscription.expires_at}, status: :created}
         else
