@@ -8,6 +8,16 @@ info:
     email: varun91thakur@gmail.com
     url: https://www.movieexplorer.com
 
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+security:
+  - bearerAuth: []
+
 paths:
   /api/v1/signup:
     post:
@@ -312,3 +322,4 @@ paths:
                   error:
                     type: string
                     example: "Movie not found"
+  
