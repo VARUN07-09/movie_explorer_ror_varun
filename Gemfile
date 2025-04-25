@@ -48,7 +48,9 @@ end
 group :development do
   gem 'spring'
 end
-gem 'rswag-api'
 gem 'rswag-ui'
+gem 'rswag-api'
+gem 'rswag-specs'
+
 gem 'dotenv'
 
